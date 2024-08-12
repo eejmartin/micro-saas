@@ -1,4 +1,4 @@
-# Micro-SaaS Application Example with &amp; Streamlit, OpenAI, and Replicate APIs
+# Micro-SaaS Application Example with Python &amp; Streamlit, OpenAI, and Replicate APIs
 
 This project is a demonstration of a SaaS application built using **Streamlit** in Python, integrating with **OpenAI** and **Replicate APIs** to provide powerful AI-driven features. The app showcases how to seamlessly combine these technologies to create an interactive, user-friendly interface for AI services.
 
