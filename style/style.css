@@ -1,0 +1,14 @@
+/* Style the submit button with a specific background color etc */
+button[kind=secondaryFormSubmit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  button[kind=secondaryFormSubmit]:hover {
+    color: #284629;
+  }
