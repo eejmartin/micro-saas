@@ -7,7 +7,7 @@ This project is a demonstration of a SaaS application built using **Streamlit** 
 - **Subscription-only Chat Tool with OpenAI Integration**: Leverage GPT models for natural language processing, text generation, and other AI-driven functionalities.
 - **Subscription-only AI Photo Editing Tool with Replicate API Integration**: Access a AI Photo Editing model, through the Replicate API.
 - **User Authentication with MongoDB Atlas**: Secure and scalable user data management using MongoDB Cloud Atlas.
-
+- **Railway Hosting**: Effortless deployment and hosting of the application on Railway's cloud platform.
 
 ### Directory Structure
 ```
@@ -81,3 +81,14 @@ micro-saas/
    ```bash
    streamlit run home.py
    ```
+
+7. Set up API keys for OpenAI and Replicate:
+    - OpenAI: [Get your API key here](https://beta.openai.com/signup/)
+    - Replicate: [Get your API key here](https://replicate.com/account/api-tokens)
+8. Configure MongoDB Atlas for user authentication:
+    - Create a MongoDB Atlas cluster and database.
+    - Add your MongoDB connection URI to the application's environment variables.
+9. Deploy the app on Railway:
+    - Create a Railway project and link this repository.
+    - Set up environment variables for OpenAI, Replicate, and MongoDB.
+    - Deploy the application using Railway's platform.
