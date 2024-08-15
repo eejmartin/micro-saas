@@ -72,15 +72,6 @@ if st.button('Summarize') and uploaded_file is not None:
             if summaries:
                 st.header("Overall Summary")
                 st.write(summaries["overall_summary"])  # Display the overall summary
-                
-                # Check if there are section summaries to display
-                if summaries["section_summaries"]:
-                    st.header("Section Summaries")
-                    for title, summary in summaries["section_summaries"]:
-                        st.subheader(f"{title}")
-                        st.markdown(summary)
-                else:
-                    st.write("No sections found in the document.")
             else:
                 st.error("Failed to generate summaries.")
         else:
