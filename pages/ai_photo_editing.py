@@ -15,6 +15,12 @@ make_sidebar()
 os.environ["REPLICATE_API_TOKEN"] = os.environ.get("REPLICATE_API_TOKEN")
 
 st.title('Edit Your Photos with AI 📷')
+html_text = f"""
+<p>Upload your photo and let our AI transform it for you. Our AI model uses the latest in Generative AI technology to generate stunning visual effects and edits to your photos.</p>
+<p>Supported file formats include JPG, JPEG, and PNG.</p>
+"""
+
+st.html(html_text)
 
 uploaded_files = st.file_uploader("Select a photo",  type = (["jpg", "jpeg", "png", "JPEG"]), accept_multiple_files=True)
 

@@ -3,12 +3,13 @@ import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
-import numpy as np
+import PyPDF2
+
 from dotenv import load_dotenv
 load_dotenv()
 
-def resend_verification(email):
-    st.success("Verification email resent successfully!")
+# def resend_verification(email):
+    # st.success("Verification email resent successfully!")
     # verification_url = os.getenv("VERIFICATION_URL")
     # data = {'email': email}
     # response = requests.post(verification_url, json=data)
@@ -59,3 +60,23 @@ def register_new_user():
             st.success('Great! Now please complete registration by confirming your email address. Then login above!')
     except Exception as e:
         st.error(e)
+
+def read_pdf(file):
+    """
+    Reads a PDF file and extracts the text content.
+
+    Parameters:
+    file (UploadedFile): The uploaded PDF file.
+
+    Returns:
+    str: Extracted text from the PDF file.
+    """
+    try:
+        reader = PyPDF2.PdfReader(file)
+        text = ''
+        for page in reader.pages:
+            text += page.extract_text()
+        return text
+    except Exception as e:
+        st.error(f"Failed to read PDF file: {e}")
+        return None

@@ -93,10 +93,7 @@ class Authenticate:
         Checks the validity of the reauthentication cookie.
         """
         print('Checks the validity of the reauthentication cookie')
-        print(self)
         self.token = self.cookie_manager.get(self.cookie_name)
-        print(self.cookie_name)
-        print(self.token)
         if self.token is not None:
             self.token = self._token_decode()            
             if self.token is not False:
@@ -121,12 +118,10 @@ class Authenticate:
             Validity of entered email.
         """
         print('checking email verified')
-        print(self.email)
         if not self.email:
             return False
         users = Users()
         user = users.get_user_by_email(self.email)
-        print(user)
         if user is not None:
             if 'verified' in user and user['verified']:
                 st.session_state['verified'] = True
@@ -208,7 +203,7 @@ class Authenticate:
             email of the authenticated user.
         """                 
         if st.session_state.get('authentication_status') in [None, False] or st.session_state.get('verified') in [None, False]:                
-            if location in ['main', 'contact_us', 'home', 'chat', 'ai_photo_editing']:
+            if location in ['main', 'contact_us', 'home', 'chat', 'ai_photo_editing', 'ai_document_summarize']:
                 login_form = st.form('Login')
             elif location == 'sidebar':
                 login_form = st.sidebar.form('Login')
@@ -230,7 +225,7 @@ class Authenticate:
         return st.session_state['name'], st.session_state['authentication_status'], st.session_state['email']
 
     def check_authentication(self, location: str='main') -> tuple:
-        if location not in ['main', 'sidebar', 'contact_us', 'home', 'chat', 'ai_photo_editing']:
+        if location not in ['main', 'sidebar', 'contact_us', 'home', 'chat', 'ai_photo_editing', 'ai_document_summarize']:
             raise ValueError("Location must be one of 'main' or 'sidebar'")
         if not st.session_state['authentication_status'] or st.session_state.get('verified') in [None, False]:             
             self._check_cookie()

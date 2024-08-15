@@ -6,6 +6,7 @@ This project is a demonstration of a SaaS application built using **Streamlit** 
 - **Streamlit Frontend**: An intuitive web interface for user interactions and visualizations.
 - **Subscription-only Chat Tool with OpenAI Integration**: Leverage GPT models for natural language processing, text generation, and other AI-driven functionalities.
 - **Subscription-only AI Photo Editing Tool with Replicate API Integration**: Access a AI Photo Editing model, through the Replicate API.
+- **Subscription-only AI Document Summarize Tool with OpenId Integration**: Access a feature that leverages AI to generate concise summaries of documents.
 - **User Authentication with MongoDB Atlas**: Secure and scalable user data management using MongoDB Cloud Atlas.
 - **Railway Hosting**: Effortless deployment and hosting of the application on Railway's cloud platform.
 
@@ -21,23 +22,24 @@ micro-saas/
 │   └─────── utils.py            # Contact Us page
 │
 ├── mongo_db/              # Directory containing Mongo db connection and table models
-│   ├─────── __init__.py           # This file initializes the mongo_db package
-│   ├─────── connections.py        # Connection logic
-│   └─────── models/               # Directory containing models schemas
+│   ├─────── __init__.py               # This file initializes the mongo_db package
+│   ├─────── connections.py            # Connection logic
+│   └─────── models/                   # Directory containing models schemas
 │            ├─────── __init__.py         # This file initializes the models package
 │            └─────── users.py            # Contact Us page
 ├── pages/                 # Directory containing additional pages for the app
-│   ├─────── ai_photo_editing.py  # AI Photo Editing page
-│   ├─────── chat.py              # Chat page
-│   └─────── contact_us.py        # Contact Us page
+│   ├─────── ai_photo_editing.py       # AI Photo Editing page
+│   ├─────── ai_document_summarize.py  # AI Photo Editing page
+│   ├─────── chat.py                   # Chat page
+│   └─────── contact_us.py             # Contact Us page
 │
 ├── utils/                 # Directory containing utility functions for the app (e.g., email verification, user registration)
 │   └─────── utils.py      # utility function
 │
 ├── .streamlit/            # Directory containing Streamlit config toml file
-│   └─────── config.toml         # Streamlit confi file
+│   └─────── config.toml               # Streamlit confi file
 ├── .vscode/               # Directory containing VS Code debug file
-│   └─────── launch.json         # VS Code debug launch config file
+│   └─────── launch.json               # VS Code debug launch config file
 │
 │
 ├── README.md              # This README file

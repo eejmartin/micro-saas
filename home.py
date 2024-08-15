@@ -41,7 +41,8 @@ elif st.session_state["authentication_status"] == True and st.session_state['ver
     # Add a button to resend the email verification
     if st.session_state.get('email'):
         if st.button(f"Resend Email Verification to {st.session_state['email']}"):
-            utils.resend_verification(st.session_state['email'])
+            # utils.resend_verification(st.session_state['email'])
+            st.success("Verification email resent successfully!")
 
 # Handle actions for users with incorrect login credentials
 elif st.session_state["authentication_status"] == False:
