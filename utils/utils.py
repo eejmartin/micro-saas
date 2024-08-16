@@ -4,6 +4,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 import PyPDF2
+from fpdf import FPDF
+import base64
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -80,3 +82,12 @@ def read_pdf(file):
     except Exception as e:
         st.error(f"Failed to read PDF file: {e}")
         return None
+
+def export_as_pdf(report_text, filename="report"):
+    report_text = report_text.replace('‘', "'").replace('’', "'").replace('“', '"').replace('”', '"')
+    pdf = FPDF(format='letter')
+    pdf.add_page()
+    pdf.set_font('Arial', '', 12)
+    pdf.multi_cell(0, 5, report_text,0,'L')
+
+    return base64.b64encode(pdf.output(dest="S").encode("latin-1", 'replace'))

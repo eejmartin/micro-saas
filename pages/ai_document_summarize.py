@@ -63,15 +63,16 @@ def summarize_text(text, doc_type):
 
     return summaries
 
-if st.button('Summarize') and uploaded_file is not None:
+if st.button('Summarize'):
         file_type = uploaded_file.name.split('.')[-1].lower()
         if file_type in ['pdf', 'txt']:
             text = utils.read_pdf(uploaded_file) if file_type == 'pdf' else str(uploaded_file.read(), 'utf-8')
             summaries = summarize_text(text, document_type)
-
             if summaries:
                 st.header("Overall Summary")
-                st.write(summaries["overall_summary"])  # Display the overall summary
+                b64 = utils.export_as_pdf(summaries["overall_summary"])
+                st.markdown(f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="Report.pdf">Download file</a>', unsafe_allow_html=True)
+                st.write(summaries["overall_summary"])  # Display the overall summary            
             else:
                 st.error("Failed to generate summaries.")
         else:
