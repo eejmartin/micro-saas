@@ -203,7 +203,7 @@ class Authenticate:
             email of the authenticated user.
         """                 
         if st.session_state.get('authentication_status') in [None, False] or st.session_state.get('verified') in [None, False]:                
-            if location in ['main', 'contact_us', 'home', 'chat', 'ai_photo_editing', 'ai_document_summarize']:
+            if location in ['main', 'contact_us', 'home', 'ai_chat', 'ai_assistant' 'ai_photo_editing', 'ai_document_summarize']:
                 login_form = st.form('Login')
             elif location == 'sidebar':
                 login_form = st.sidebar.form('Login')
@@ -225,7 +225,7 @@ class Authenticate:
         return st.session_state['name'], st.session_state['authentication_status'], st.session_state['email']
 
     def check_authentication(self, location: str='main') -> tuple:
-        if location not in ['main', 'sidebar', 'contact_us', 'home', 'chat', 'ai_photo_editing', 'ai_document_summarize']:
+        if location not in ['main', 'sidebar', 'contact_us', 'home', 'ai_chat', 'ai_assistant', 'ai_photo_editing', 'ai_document_summarize']:
             raise ValueError("Location must be one of 'main' or 'sidebar'")
         if not st.session_state['authentication_status'] or st.session_state.get('verified') in [None, False]:             
             self._check_cookie()

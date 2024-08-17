@@ -6,6 +6,7 @@ from navigation import make_sidebar
 
 # Set Streamlit page configuration
 st.set_page_config(page_title="Chat - MicroSaaS", page_icon="💬", layout="centered", initial_sidebar_state="auto", menu_items=None)
+
 print('Loading Chat Page...')
 
 make_sidebar()
@@ -19,7 +20,13 @@ if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
 
 # Displaying the title of the chat interface
-st.title("Chat with the AI Assistant 💬")
+st.title("Chat with the AI Bot 💬")
+
+html_text = f"""
+<p>Chat with our AI Bot! Our AI Bot uses OpenAI GPT-3.5-turbo model to generate human-like responses to your messages. Ask questions, seek advice, or just have a casual conversation with our AI Assistant.</p>
+"""
+
+st.html(html_text)
 
 # Ensuring that there is a message list in the session state for storing conversation history
 if "messages" not in st.session_state:

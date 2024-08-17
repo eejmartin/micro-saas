@@ -27,7 +27,8 @@ def make_sidebar():
         st.sidebar.page_link('pages/contact_us.py', label='Contact Us', icon="✉️")
         
         if st.session_state["authentication_status"] and st.session_state["verified"]:            
-            st.sidebar.page_link('pages/chat.py', label='Chat with AI assistant', icon="💬")
+            st.sidebar.page_link('pages/ai_chat.py', label='Chat with AI bot', icon="💬")
+            st.sidebar.page_link('pages/ai_assistant.py', label='AI Assistant', icon="📨")
             st.sidebar.page_link('pages/ai_photo_editing.py', label='AI Photo Editing', icon="📷")
             st.sidebar.page_link('pages/ai_document_summarize.py', label='AI Document Summarize', icon="📰")
             

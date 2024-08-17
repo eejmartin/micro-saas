@@ -29,8 +29,9 @@ micro-saas/
 │            └─────── users.py            # Contact Us page
 ├── pages/                 # Directory containing additional pages for the app
 │   ├─────── ai_photo_editing.py       # AI Photo Editing page
-│   ├─────── ai_document_summarize.py  # AI Photo Editing page
-│   ├─────── chat.py                   # Chat page
+│   ├─────── ai_document_summarize.py  # AI Document Summarize page
+│   ├─────── ai_chat.py                # AI Chat page
+│   ├─────── ai_assistant.py           # AI Assistant page
 │   └─────── contact_us.py             # Contact Us page
 │
 ├── utils/                 # Directory containing utility functions for the app (e.g., email verification, user registration)
